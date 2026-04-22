@@ -1,26 +1,442 @@
 @import "tailwindcss";
 
+/* ============================================================
+   MD3 Design Tokens — Coffee-themed color scheme
+   Generated from seed color #8C503A
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --- Color tokens (Light) --- */
+  --md-sys-color-primary: #8C503A;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #FFDBCE;
+  --md-sys-color-on-primary-container: #380D00;
+
+  --md-sys-color-secondary: #77574D;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #FFDBCE;
+  --md-sys-color-on-secondary-container: #2C160E;
+
+  --md-sys-color-tertiary: #6B5D2F;
+  --md-sys-color-on-tertiary: #FFFFFF;
+  --md-sys-color-tertiary-container: #F5E1A7;
+  --md-sys-color-on-tertiary-container: #231B00;
+
+  --md-sys-color-error: #BA1A1A;
+  --md-sys-color-on-error: #FFFFFF;
+  --md-sys-color-error-container: #FFDAD6;
+  --md-sys-color-on-error-container: #410002;
+
+  --md-sys-color-surface: #FFF8F6;
+  --md-sys-color-on-surface: #221A17;
+  --md-sys-color-on-surface-variant: #52443E;
+  --md-sys-color-surface-variant: #F4DED6;
+  --md-sys-color-outline: #85736C;
+  --md-sys-color-outline-variant: #D7C2BA;
+
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #FCF1ED;
+  --md-sys-color-surface-container: #F6ECE8;
+  --md-sys-color-surface-container-high: #F0E6E3;
+  --md-sys-color-surface-container-highest: #EAE0DD;
+  --md-sys-color-surface-dim: #E4D8D4;
+  --md-sys-color-surface-bright: #FFF8F6;
+
+  --md-sys-color-inverse-surface: #382E2B;
+  --md-sys-color-inverse-on-surface: #FEEEE9;
+  --md-sys-color-inverse-primary: #FFB59A;
+
+  /* --- Shape tokens --- */
+  --md-sys-shape-corner-none: 0px;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-large-increased: 20px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-extra-large-increased: 32px;
+  --md-sys-shape-corner-extra-extra-large: 48px;
+  --md-sys-shape-corner-full: 9999px;
+
+  /* --- Motion tokens --- */
+  --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
+  --md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --md-sys-motion-duration-short1: 50ms;
+  --md-sys-motion-duration-short2: 100ms;
+  --md-sys-motion-duration-short3: 150ms;
+  --md-sys-motion-duration-short4: 200ms;
+  --md-sys-motion-duration-medium1: 250ms;
+  --md-sys-motion-duration-medium2: 300ms;
+  --md-sys-motion-duration-medium4: 400ms;
+  --md-sys-motion-duration-long2: 500ms;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* --- Dark theme (Manual override) --- */
+:root.dark {
+  --md-sys-color-primary: #FFB59A;
+  --md-sys-color-on-primary: #55210D;
+  --md-sys-color-primary-container: #703823;
+  --md-sys-color-on-primary-container: #FFDBCE;
+  --md-sys-color-secondary: #E6BEAF;
+  --md-sys-color-on-secondary: #432A21;
+  --md-sys-color-secondary-container: #5D4036;
+  --md-sys-color-on-secondary-container: #FFDBCE;
+  --md-sys-color-tertiary: #D8C58D;
+  --md-sys-color-on-tertiary: #3A3005;
+  --md-sys-color-tertiary-container: #52461A;
+  --md-sys-color-on-tertiary-container: #F5E1A7;
+  --md-sys-color-surface: #19120F;
+  --md-sys-color-on-surface: #EFE0DB;
+  --md-sys-color-on-surface-variant: #D7C2BA;
+  --md-sys-color-surface-variant: #52443E;
+  --md-sys-color-outline: #A08C86;
+  --md-sys-color-outline-variant: #52443E;
+  --md-sys-color-surface-container-lowest: #140C0A;
+  --md-sys-color-surface-container-low: #201613;
+  --md-sys-color-surface-container: #261C19;
+  --md-sys-color-surface-container-high: #302622;
+  --md-sys-color-surface-container-highest: #3B302C;
+  --md-sys-color-surface-dim: #19120F;
+  --md-sys-color-surface-bright: #413632;
+  --md-sys-color-inverse-surface: #EFE0DB;
+  --md-sys-color-inverse-on-surface: #382E2B;
+  --md-sys-color-inverse-primary: #8C503A;
 }
 
+/* --- Dark theme (System preference fallback) --- */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not(.light) {
+    --md-sys-color-primary: #FFB59A;
+    --md-sys-color-on-primary: #55210D;
+    --md-sys-color-primary-container: #703823;
+    --md-sys-color-on-primary-container: #FFDBCE;
+    --md-sys-color-secondary: #E6BEAF;
+    --md-sys-color-on-secondary: #432A21;
+    --md-sys-color-secondary-container: #5D4036;
+    --md-sys-color-on-secondary-container: #FFDBCE;
+    --md-sys-color-tertiary: #D8C58D;
+    --md-sys-color-on-tertiary: #3A3005;
+    --md-sys-color-tertiary-container: #52461A;
+    --md-sys-color-on-tertiary-container: #F5E1A7;
+    --md-sys-color-surface: #19120F;
+    --md-sys-color-on-surface: #EFE0DB;
+    --md-sys-color-on-surface-variant: #D7C2BA;
+    --md-sys-color-surface-variant: #52443E;
+    --md-sys-color-outline: #A08C86;
+    --md-sys-color-outline-variant: #52443E;
+    --md-sys-color-surface-container-lowest: #140C0A;
+    --md-sys-color-surface-container-low: #201613;
+    --md-sys-color-surface-container: #261C19;
+    --md-sys-color-surface-container-high: #302622;
+    --md-sys-color-surface-container-highest: #3B302C;
+    --md-sys-color-surface-dim: #19120F;
+    --md-sys-color-surface-bright: #413632;
+    --md-sys-color-inverse-surface: #EFE0DB;
+    --md-sys-color-inverse-on-surface: #382E2B;
+    --md-sys-color-inverse-primary: #8C503A;
   }
 }
 
+@theme inline {
+  --color-background: var(--md-sys-color-surface);
+  --color-foreground: var(--md-sys-color-on-surface);
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font-family: 'Roboto Flex', 'Roboto', system-ui, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   MD3 Typography Utility Classes
+   Using individual properties (not shorthand) for reliability
+   ============================================================ */
+
+.md3-display-large {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 400;
+  font-size: 3.5625rem; /* 57sp */
+  line-height: 4rem;    /* 64sp */
+  letter-spacing: -0.25px;
+}
+.md3-display-medium {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 400;
+  font-size: 2.8125rem; /* 45sp */
+  line-height: 3.25rem;
+  letter-spacing: 0;
+}
+.md3-display-small {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 400;
+  font-size: 2.25rem; /* 36sp */
+  line-height: 2.75rem;
+  letter-spacing: 0;
+}
+.md3-headline-large {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 400;
+  font-size: 2rem; /* 32sp */
+  line-height: 2.5rem;
+  letter-spacing: 0;
+}
+.md3-headline-medium {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 400;
+  font-size: 1.75rem; /* 28sp */
+  line-height: 2.25rem;
+  letter-spacing: 0;
+}
+.md3-headline-small {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem; /* 24sp */
+  line-height: 2rem;
+  letter-spacing: 0;
+}
+.md3-title-large {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 400;
+  font-size: 1.375rem; /* 22sp */
+  line-height: 1.75rem;
+  letter-spacing: 0;
+}
+.md3-title-medium {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 500;
+  font-size: 1rem; /* 16sp */
+  line-height: 1.5rem;
+  letter-spacing: 0.15px;
+}
+.md3-body-large {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16sp */
+  line-height: 1.5rem;
+  letter-spacing: 0.5px;
+}
+.md3-body-medium {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem; /* 14sp */
+  line-height: 1.25rem;
+  letter-spacing: 0.25px;
+}
+.md3-label-large {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem; /* 14sp */
+  line-height: 1.25rem;
+  letter-spacing: 0.1px;
+}
+.md3-label-medium {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem; /* 12sp */
+  line-height: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   MD3 Component Styles: Top App Bar
+   ============================================================ */
+
+.md3-top-app-bar {
+  height: 64px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+.md3-top-app-bar--scrolled {
+  background: var(--md-sys-color-surface-container);
+}
+.md3-top-app-bar__title {
+  flex: 1;
+  padding: 0 12px;
+  margin: 0;
+}
+
+/* ============================================================
+   MD3 Component Styles: Cards
+   ============================================================ */
+
+.md3-card--elevated {
+  background: var(--md-sys-color-surface-container-low);
+  border-radius: var(--md-sys-shape-corner-medium);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 1px 3px 1px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: box-shadow var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+.md3-card--outlined {
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  overflow: hidden;
+}
+
+.md3-card--filled {
+  background: var(--md-sys-color-surface-container-highest);
+  border-radius: var(--md-sys-shape-corner-medium);
+  overflow: hidden;
+}
+
+.md3-card__content {
+  padding: 16px;
+}
+
+.md3-card__actions {
+  padding: 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.md3-card__media {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+/* --- Hover states for pointer (mouse) devices --- */
+@media (hover: hover) {
+  .md3-card--elevated:hover {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 2px 6px 2px rgba(0,0,0,0.15);
+  }
+  .md3-card--outlined:hover,
+  .md3-card--filled:hover {
+    background: color-mix(
+      in srgb,
+      var(--md-sys-color-on-surface) 8%,
+      var(--md-sys-color-surface)
+    );
+  }
+}
+
+/* ============================================================
+   Responsive Layout Margins (MD3 Spacing)
+   ============================================================ */
+
+.md3-section-padding {
+  padding: 16px !important; /* compact */
+}
+@media (min-width: 600px) {
+  .md3-section-padding { padding: 24px !important; }
+}
+
+/* Constrain content on large screens */
+.md3-content-max-width {
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .md3-content-max-width {
+    max-width: 1040px;
+    margin-inline: auto;
+  }
+}
+
+/* ============================================================
+   Fix Tailwind Preflight stripping @material/web Shadow DOM
+   
+   Tailwind's CSS reset (preflight) sets padding:0, margin:0,
+   border:0 on ALL elements — including custom element hosts
+   like <md-filled-button>. The Shadow DOM internal styles
+   cannot override the outer preflight reset. We must restore
+   them here.
+   ============================================================ */
+
+/* Restore button padding that preflight strips */
+md-filled-button,
+md-filled-tonal-button,
+md-outlined-button,
+md-elevated-button {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--md-sys-shape-corner-full);
+  cursor: pointer;
+}
+
+md-text-button {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+md-icon-button {
+  min-width: 48px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Ensure <md-icon> uses Material Symbols font everywhere.
+   Only force font-family — let the Shadow DOM handle size/display
+   inside buttons and icon-buttons. */
+md-icon {
+  font-family: 'Material Symbols Outlined' !important;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Standalone icons (outside buttons) need explicit sizing */
+md-icon:not([slot]) {
+  font-size: var(--md-icon-size, 24px);
+  width: var(--md-icon-size, 24px);
+  height: var(--md-icon-size, 24px);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   Timeline Grid — ensures center column is perfectly centered
+   ============================================================ */
+.timeline-row {
+  display: flex;
+  gap: 16px;
+  align-items: start;
+  padding-bottom: 8px;
+}
+@media (min-width: 768px) {
+  .timeline-row {
+    display: grid !important;
+    grid-template-columns: 1fr 48px 1fr !important;
+    gap: 0 !important;
+  }
+}
+
+/* Enable native smooth scrolling for in-page anchors */
+html {
+  scroll-behavior: smooth;
 }
