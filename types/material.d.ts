@@ -12,6 +12,16 @@ declare global {
       'md-icon-button': any;
       'md-menu': any;
       'md-menu-item': any;
+      'md-tabs': any;
+      'md-primary-tab': any;
+      'md-chip-set': any;
+      'md-filter-chip': any;
+      'md-slider': any;
+      'md-list': any;
+      'md-list-item': any;
+      'md-switch': any;
+      'md-divider': any;
+      'md-checkbox': any;
     }
   }
   namespace React {
@@ -26,6 +36,16 @@ declare global {
         'md-icon-button': any;
         'md-menu': any;
         'md-menu-item': any;
+        'md-tabs': any;
+        'md-primary-tab': any;
+        'md-chip-set': any;
+        'md-filter-chip': any;
+        'md-slider': any;
+        'md-list': any;
+        'md-list-item': any;
+        'md-switch': any;
+        'md-divider': any;
+        'md-checkbox': any;
       }
     }
   }

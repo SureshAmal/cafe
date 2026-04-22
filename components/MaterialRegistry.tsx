@@ -25,6 +25,7 @@ export default function MaterialRegistry() {
     import('@material/web/checkbox/checkbox.js');
     import('@material/web/chips/chip-set.js');
     import('@material/web/chips/filter-chip.js');
+    import('@material/web/divider/divider.js');
   }, []);
 
   return null;
